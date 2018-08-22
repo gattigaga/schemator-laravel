@@ -1,0 +1,9 @@
+{
+  "id": "gattigaga-laravel",
+  "name": "Schemator Laravel",
+  "author": "Gattigaga Hayyuta Dewa",
+  "description": "Work on Laravel scheme and export to model and migration.",
+  "license": "MIT",
+  "version": "1.0.0",
+  "icon": "icon.png"
+}

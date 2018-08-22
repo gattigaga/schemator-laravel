@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`onExport() should returns exported result 1`] = `
+Object {
+  "files": Array [
+    Object {
+      "content": "<?php
+
+namespace App;
+
+use Illuminate\\\\Database\\\\Eloquent\\\\Model;
+
+class User extends Model
+{
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password'
+    ];
+}",
+      "path": "/exported/myproject/app/User.php",
+    },
+    Object {
+      "content": "<?php
+
+namespace App;
+
+use Illuminate\\\\Database\\\\Eloquent\\\\Model;
+
+class Post extends Model
+{
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'title'
+    ];
+}",
+      "path": "/exported/myproject/app/Post.php",
+    },
+    Object {
+      "content": "<?php
+
+use Illuminate\\\\Support\\\\Facades\\\\Schema;
+use Illuminate\\\\Database\\\\Schema\\\\Blueprint;
+use Illuminate\\\\Database\\\\Migrations\\\\Migration;
+
+class CreateUsersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email');
+            $table->text('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('users');
+    }
+}",
+      "path": "/exported/myproject/database/migrations/2018_08_22_190838_create_users_table.php",
+    },
+    Object {
+      "content": "<?php
+
+use Illuminate\\\\Support\\\\Facades\\\\Schema;
+use Illuminate\\\\Database\\\\Schema\\\\Blueprint;
+use Illuminate\\\\Database\\\\Migrations\\\\Migration;
+
+class CreatePostsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('title');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('posts');
+    }
+}",
+      "path": "/exported/myproject/database/migrations/2018_08_22_190838_create_posts_table.php",
+    },
+  ],
+  "paths": Array [
+    "/exported/myproject",
+    "/exported/myproject/app",
+    "/exported/myproject/database",
+    "/exported/myproject/database/migrations",
+  ],
+}
+`;
