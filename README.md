@@ -1,4 +1,4 @@
-# Plugin Name
+# Schemator Laravel
 
 Schemator Plugin used to work on **Laravel** scheme and export to **model and migration**.
 
